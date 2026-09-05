@@ -194,7 +194,7 @@ METHOD 3: EMBED WITHIN A WORDPRESS PAGE / ELEMENTOR
 
 Need assistance?
 Email: info@shreetechautomation.com
-WhatsApp: +91-77080-84160
+WhatsApp / Call: +91 80 4580 1731
 ==================================================================`
       );
 
@@ -367,7 +367,7 @@ WhatsApp: +91-77080-84160
         {/* Modal Footer */}
         <div className="p-4 bg-slate-50 border-t border-slate-200 flex items-center justify-between">
           <span className="text-[11px] text-slate-500 font-mono">
-            Support: info@shreetechautomation.com • +91-77080-84160
+            Support: info@shreetechautomation.com • +91 80 4580 1731
           </span>
           <button
             onClick={onClose}

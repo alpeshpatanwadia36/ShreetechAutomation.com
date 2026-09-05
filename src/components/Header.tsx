@@ -55,9 +55,9 @@ export const Header: React.FC<HeaderProps> = ({
         <div className="w-full max-w-[1800px] mx-auto flex flex-wrap items-center justify-between gap-3 px-2 sm:px-4">
           <div className="flex flex-wrap items-center gap-4 sm:gap-6">
             <a 
-              href={`tel:${COMPANY_DETAILS.primaryPhone}`} 
+              href={`tel:${COMPANY_DETAILS.phoneRaw}`} 
               className="flex items-center gap-1.5 hover:text-amber-400 transition-colors font-medium whitespace-nowrap"
-              title="Call Headquarters"
+              title="Call Vadodara Head Office"
             >
               <Phone className="w-3.5 h-3.5 text-amber-500" />
               <span>{COMPANY_DETAILS.primaryPhone}</span>

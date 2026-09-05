@@ -197,8 +197,8 @@ export const Footer: React.FC<FooterProps> = ({
                 )}
                 <p className="text-slate-400 leading-tight">{loc.address}</p>
                 <div className="pt-1 flex flex-col gap-0.5">
-                  <a href={`tel:${loc.phone}`} className="hover:text-white font-mono text-amber-300">
-                    Tel: {loc.phone}
+                  <a href={`tel:${COMPANY_DETAILS.phoneRaw}`} className="hover:text-white font-mono text-amber-300">
+                    Tel / WhatsApp: {loc.phone}
                   </a>
                   <a href={`mailto:${loc.email}`} className="hover:text-white">
                     Email: {loc.email}

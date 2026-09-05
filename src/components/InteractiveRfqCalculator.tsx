@@ -384,7 +384,7 @@ _Generated via Shree Tech Automation Portal (shreetechautomation.com / .in)_`;
                   className="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-2.5 px-4 rounded-xl text-xs flex items-center justify-center gap-2 transition-colors shadow"
                 >
                   <MessageCircle className="w-4 h-4" />
-                  <span>Send via WhatsApp (+91-77080-84160)</span>
+                  <span>Send via WhatsApp (+91 80 4580 1731)</span>
                 </button>
 
                 <button

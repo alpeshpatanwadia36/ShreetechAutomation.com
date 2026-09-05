@@ -122,25 +122,16 @@ export const ContactSection: React.FC = () => {
               {/* Contact Numbers */}
               <div className="space-y-1">
                 <div className="text-xs font-semibold text-slate-500 uppercase tracking-wide">
-                  Direct Telephone / WhatsApp
+                  Direct Phone & WhatsApp
                 </div>
                 <div className="flex flex-col gap-1">
                   <a
-                    href={`tel:${activeBranch.phone}`}
+                    href={`tel:${COMPANY_DETAILS.phoneRaw}`}
                     className="text-sm font-mono font-bold text-amber-700 hover:text-amber-600 flex items-center gap-2"
                   >
                     <Phone className="w-4 h-4 text-amber-600" />
-                    <span>{activeBranch.phone}</span>
+                    <span>{COMPANY_DETAILS.primaryPhone}</span>
                   </a>
-                  {activeBranch.phoneAlt && (
-                    <a
-                      href={`tel:${activeBranch.phoneAlt}`}
-                      className="text-sm font-mono font-bold text-slate-700 hover:text-amber-600 flex items-center gap-2"
-                    >
-                      <Phone className="w-4 h-4 text-slate-400" />
-                      <span>{activeBranch.phoneAlt}</span>
-                    </a>
-                  )}
                 </div>
               </div>
 

@@ -116,7 +116,7 @@ export const AboutSection: React.FC = () => {
                   </p>
                   <div className="pt-1 flex flex-wrap items-center justify-between gap-2 text-xs">
                     <div className="flex items-center gap-3 font-mono text-slate-300">
-                      <a href={`tel:${branch.phone}`} className="text-amber-400 hover:underline">{branch.phone}</a>
+                      <a href={`tel:${COMPANY_DETAILS.phoneRaw}`} className="text-amber-400 hover:underline">{branch.phone}</a>
                       <span className="text-slate-600">•</span>
                       <a href={`mailto:${branch.email}`} className="text-slate-400 hover:text-white">{branch.email}</a>
                     </div>
