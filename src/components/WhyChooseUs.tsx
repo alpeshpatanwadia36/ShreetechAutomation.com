@@ -31,7 +31,7 @@ export const WhyChooseUs: React.FC = () => {
     {
       icon: <Truck className="w-5 h-5 text-amber-600" />,
       title: 'Pan-India Logistics & Commissioning',
-      description: 'With strategic hubs in Coimbatore and Vadodara, we rapidly dispatch equipment and dispatch skilled technicians for on-site commissioning.',
+      description: 'From our centralized manufacturing facility in Vadodara, Gujarat, we rapidly dispatch equipment and deploy skilled technicians for on-site commissioning nationwide.',
     },
     {
       icon: <Clock className="w-5 h-5 text-amber-600" />,

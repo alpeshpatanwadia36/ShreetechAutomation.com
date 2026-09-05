@@ -78,7 +78,7 @@ export const Header: React.FC<HeaderProps> = ({
               title="View Shree Tech Automation on Google Maps"
             >
               <MapPin className="w-3.5 h-3.5 text-amber-500" />
-              <span>Vadodara (Manjalpur) & Coimbatore Hub</span>
+              <span>Official Office: Vadodara, Gujarat</span>
             </a>
           </div>
 
@@ -206,7 +206,7 @@ export const Header: React.FC<HeaderProps> = ({
               onClick={() => handleNavClick('contact')}
               className="hover:text-amber-600 transition-colors whitespace-nowrap py-1"
             >
-              Contact & Branches
+              Contact & Office
             </button>
           </nav>
 
@@ -322,7 +322,7 @@ export const Header: React.FC<HeaderProps> = ({
               onClick={() => handleNavClick('contact')}
               className="w-full text-left px-3 py-2 font-medium text-slate-800 hover:bg-slate-50 rounded"
             >
-              Contact Coimbatore & Vadodara
+              Contact & Official Office
             </button>
           </div>
 

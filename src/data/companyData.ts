@@ -29,7 +29,7 @@ export const BRANCH_LOCATIONS: BranchLocation[] = [
   {
     city: 'Vadodara',
     state: 'Gujarat',
-    type: 'Registered Office & Manufacturing Unit',
+    type: 'Registered Head Office & Manufacturing Unit',
     proprietor: 'Mr. Janak Thakar',
     address: '4-A, Nirman Deep Complex, Opposite My Apple School, Near Avdhoot Phatak, Manjalpur, Vadodara - 390011, Gujarat, India',
     landmark: 'Opposite My Apple School, Near Avdhoot Phatak (Crossing)',
@@ -42,22 +42,6 @@ export const BRANCH_LOCATIONS: BranchLocation[] = [
     coordinates: {
       lat: 22.2619,
       lng: 73.1895,
-    },
-  },
-  {
-    city: 'Coimbatore',
-    state: 'Tamil Nadu',
-    type: 'Southern Regional Hub & Support Facility',
-    address: '1st Floor, Welcome Building, Ranga Konar Street, Kattoor, Coimbatore, Tamil Nadu 641009, India',
-    landmark: 'Welcome Building, Near Ranga Konar Street, Kattoor',
-    phone: '+91-77080-84160',
-    phoneAlt: '+91-99948-84160',
-    email: 'info@shreetechautomation.com',
-    googleShareUrl: 'https://maps.google.com/?q=Ranga+Konar+St,+Kattoor,+Coimbatore,+Tamil+Nadu+641009',
-    mapEmbedUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.326260846205!2d76.95544777598826!3d11.01410948915004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba8590130dbcb57%3A0x633519b4fcb5f7e7!2sRanga%20Konar%20St%2C%20Kattoor%2C%20Annamalai%20Nagar%2C%20Coimbatore%2C%20Tamil%20Nadu%20641009!5e0!3m2!1sen!2sin!4v1709600000000!5m2!1sen!2sin',
-    coordinates: {
-      lat: 11.0141,
-      lng: 76.9554,
     },
   },
 ];
@@ -172,7 +156,7 @@ export const TESTIMONIALS: TestimonialItem[] = [
     name: 'K. Rajasekaran',
     role: 'Head of Engineering & Projects',
     company: 'Leading Pharma Sterile Formulations',
-    location: 'Coimbatore, Tamil Nadu',
+    location: 'Ahmedabad, Gujarat',
     content: 'Shree Tech Automation installed 4-door cleanroom interlock systems and rapid PVC roll-up doors in our Class B manufacturing suite. The interlocking logic is fail-safe, and their team provided outstanding installation and validation support.',
     rating: 5,
     productInstalled: 'Cleanroom Door Interlock & PVC Rapid Doors',

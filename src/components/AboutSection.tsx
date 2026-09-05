@@ -28,7 +28,7 @@ export const AboutSection: React.FC = () => {
             Pioneering Industrial Automation & Cleanroom Systems Since 2012
           </h2>
           <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
-            Headquartered in Coimbatore with a dedicated manufacturing and branch hub in Vadodara, Shree Tech Automation is a premier Indian manufacturer, exporter, and turnkey solutions provider.
+            Headquartered in Vadodara, Gujarat (Manjalpur), Shree Tech Automation is a premier Indian manufacturer, exporter, and turnkey solutions provider.
           </p>
         </div>
 
@@ -42,7 +42,7 @@ export const AboutSection: React.FC = () => {
             </p>
 
             <p>
-              Our operations span two strategic industrial epicenters: our corporate office in <strong className="text-slate-900 font-semibold">Coimbatore, Tamil Nadu</strong> (Welcome Building, Ranga Konar Street) and our manufacturing and distribution facility in <strong className="text-slate-900 font-semibold">Vadodara, Gujarat</strong> (Manjalpur). This dual-hub presence enables us to deliver prompt technical support, quick spare parts turnaround, and on-site commissioning across Southern, Western, Northern, and Eastern India.
+              Our central operations are based at our registered head office and manufacturing facility in <strong className="text-slate-900 font-semibold">Vadodara, Gujarat</strong> (4-A Nirman Deep Complex, Manjalpur). Under the leadership of proprietor <strong className="text-slate-900 font-semibold">Mr. Janak Thakar</strong>, our facility integrates complete fabrication, assembly, quality inspection, and dispatch infrastructure to deliver prompt technical support, quick spare parts turnaround, and on-site commissioning across all industrial corridors in India.
             </p>
 
             {/* Core Competencies Bento */}
@@ -96,7 +96,7 @@ export const AboutSection: React.FC = () => {
               <div className="flex items-center justify-between border-b border-slate-800 pb-3">
                 <h3 className="font-bold text-base text-white flex items-center gap-2">
                   <Building2 className="w-4 h-4 text-amber-400" />
-                  <span>Our Geographic Hubs</span>
+                  <span>Official Registered Office</span>
                 </h3>
                 <span className="text-[11px] font-mono text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/20">
                   PAN-INDIA

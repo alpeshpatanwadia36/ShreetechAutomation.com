@@ -122,7 +122,7 @@ _Generated via Shree Tech Automation Portal (shreetechautomation.com / .in)_`;
             Request an Instant Factory Direct Quotation
           </h2>
           <p className="text-sm sm:text-base text-slate-400">
-            Select your required automation system, customize key parameters, and generate an instant request. Our engineering team at Coimbatore & Vadodara reviews and provides competitive pricing with drawing schematics within 2–4 hours.
+            Select your required automation system, customize key parameters, and generate an instant request. Our engineering team at Vadodara reviews and provides competitive pricing with drawing schematics within 2–4 hours.
           </p>
         </div>
 

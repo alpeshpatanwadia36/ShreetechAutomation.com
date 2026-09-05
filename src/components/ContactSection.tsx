@@ -18,7 +18,6 @@ import {
 import { COMPANY_DETAILS, BRANCH_LOCATIONS, FAQS } from '../data/companyData';
 
 export const ContactSection: React.FC = () => {
-  const [activeBranchIndex, setActiveBranchIndex] = useState<number>(0);
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
   
   // Quick contact form state
@@ -29,7 +28,7 @@ export const ContactSection: React.FC = () => {
   const [message, setMessage] = useState('');
   const [submitted, setSubmitted] = useState(false);
 
-  const activeBranch = BRANCH_LOCATIONS[activeBranchIndex];
+  const activeBranch = BRANCH_LOCATIONS[0];
 
   const handleFormSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -52,13 +51,13 @@ export const ContactSection: React.FC = () => {
         <div className="text-center max-w-3xl mx-auto space-y-3 mb-12">
           <div className="inline-flex items-center gap-2 bg-amber-100 text-amber-900 border border-amber-300 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
             <Building2 className="w-3.5 h-3.5 text-amber-700" />
-            <span>Locations & Support Desk</span>
+            <span>Official Office & Support Desk</span>
           </div>
           <h2 className="text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
-            Connect With Our Engineering Hubs
+            Connect With Our Head Office
           </h2>
           <p className="text-sm sm:text-base text-slate-600">
-            Reach our Coimbatore Headquarters or Vadodara Branch for technical consultation, layout sizing, distributor inquiries, or quick quotation requests.
+            Reach our registered head office in Vadodara, Gujarat for technical consultation, layout sizing, distributor inquiries, or quick quotation requests.
           </p>
         </div>
 
@@ -68,20 +67,9 @@ export const ContactSection: React.FC = () => {
           {/* Left 5 Cols: Branch Info */}
           <div className="lg:col-span-5 space-y-4">
             
-            <div className="flex items-center gap-2 p-1 bg-slate-200 rounded-xl">
-              {BRANCH_LOCATIONS.map((b, idx) => (
-                <button
-                  key={idx}
-                  onClick={() => setActiveBranchIndex(idx)}
-                  className={`flex-1 py-2 rounded-lg text-xs font-bold transition-all ${
-                    activeBranchIndex === idx
-                      ? 'bg-white text-slate-900 shadow-sm'
-                      : 'text-slate-600 hover:text-slate-900'
-                  }`}
-                >
-                  {b.city} ({b.state})
-                </button>
-              ))}
+            <div className="flex items-center gap-2 px-3.5 py-2.5 bg-amber-50 border border-amber-200/90 rounded-xl text-xs font-bold text-amber-950">
+              <MapPin className="w-4 h-4 text-amber-700 shrink-0" />
+              <span>Official Registered Office: Vadodara, Gujarat</span>
             </div>
 
             {/* Selected Branch Detail Box */}
@@ -92,7 +80,7 @@ export const ContactSection: React.FC = () => {
                     {activeBranch.type}
                   </span>
                   <h3 className="text-xl font-bold text-slate-900">
-                    {activeBranch.city} Office & Facility
+                    Vadodara Head Office & Works
                   </h3>
                 </div>
                 <div className="w-9 h-9 rounded-full bg-amber-50 text-amber-700 flex items-center justify-center font-bold">

@@ -47,7 +47,7 @@ export const Hero: React.FC<HeroProps> = ({
           </div>
           <div className="inline-flex items-center gap-2 bg-slate-800/80 border border-slate-700 text-slate-300 px-3 py-1.5 rounded-full text-xs font-medium">
             <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-            <span>Coimbatore HQ • Vadodara Hub • Pan-India Supply</span>
+            <span>Official Office: Vadodara, Gujarat • Pan-India Supply</span>
           </div>
         </div>
 

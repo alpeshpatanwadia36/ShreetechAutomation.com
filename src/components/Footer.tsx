@@ -45,7 +45,7 @@ export const Footer: React.FC<FooterProps> = ({
               Ready to Automate Your Cleanrooms or Entrance Gates?
             </h3>
             <p className="text-xs sm:text-sm font-medium text-slate-900">
-              Connect directly with our engineering team in Coimbatore & Vadodara for custom drawings and quotations.
+              Connect directly with our engineering team in Vadodara for custom drawings and quotations.
             </p>
           </div>
           <div className="flex flex-wrap items-center gap-3">
@@ -165,7 +165,7 @@ export const Footer: React.FC<FooterProps> = ({
               </li>
               <li>
                 <button onClick={() => onScrollToSection('contact')} className="hover:text-amber-400 transition-colors">
-                  Contact Branches
+                  Contact & Head Office
                 </button>
               </li>
               <li className="pt-2">
@@ -183,14 +183,14 @@ export const Footer: React.FC<FooterProps> = ({
           {/* Col 4: Corporate Offices (3 Cols) */}
           <div className="lg:col-span-3 space-y-4">
             <h4 className="font-bold text-white text-xs uppercase tracking-wider">
-              Locations & Direct Contacts
+              Official Registered Office
             </h4>
 
             {BRANCH_LOCATIONS.map((loc, i) => (
               <div key={i} className="space-y-1.5 text-[11px] bg-slate-900/60 p-3 rounded-xl border border-slate-800">
                 <div className="flex items-center justify-between">
-                  <div className="font-bold text-amber-400">{loc.city}</div>
-                  <span className="text-[9px] font-mono text-slate-400 bg-slate-800/80 px-1.5 py-0.5 rounded">{loc.type.split('&')[0]}</span>
+                  <div className="font-bold text-amber-400">{loc.city} Head Office</div>
+                  <span className="text-[9px] font-mono text-slate-400 bg-slate-800/80 px-1.5 py-0.5 rounded">HQ & Works</span>
                 </div>
                 {loc.proprietor && (
                   <p className="text-[10px] text-slate-300">Proprietor: <span className="font-semibold text-white">{loc.proprietor}</span></p>
@@ -226,7 +226,7 @@ export const Footer: React.FC<FooterProps> = ({
           <div className="space-y-1">
             <p>© 2012–2026 Shree Tech Automation. All rights reserved.</p>
             <p className="text-slate-400">
-              Coimbatore, Tamil Nadu & Vadodara, Gujarat, India. Designed for high performance and WordPress hosting compatibility.
+              Manjalpur, Vadodara - 390011, Gujarat, India. Official Portal • Designed for high performance and WordPress hosting compatibility.
             </p>
           </div>
 
