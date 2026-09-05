@@ -1,0 +1,6 @@
+{
+  "name": "Shree Tech Automation",
+  "description": "Industrial Automation, Cleanroom Door Interlocking, Entrance Automation, Hygiene & Security Solutions - Official Web Portal",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
