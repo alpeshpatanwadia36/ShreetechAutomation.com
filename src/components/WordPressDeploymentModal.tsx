@@ -261,21 +261,33 @@ WhatsApp / Call: +91 80 4580 1731
             <div className="space-y-1">
               <div className="font-bold text-sm text-white flex items-center gap-2">
                 <FolderArchive className="w-4 h-4 text-amber-400" />
-                <span>Download Ready WordPress Package (.zip)</span>
+                <span>Download Ready Web Hosting Package (.zip)</span>
               </div>
               <p className="text-xs text-slate-400">
-                Includes pre-configured <code className="text-amber-300">.htaccess</code>, deployment instructions, and entry files.
+                Complete production build (~824 KB) with all product photos, <code className="text-amber-300">.htaccess</code>, and <code className="text-amber-300">index.html</code>.
               </p>
             </div>
 
-            <button
-              onClick={handleDownloadZipPackage}
-              disabled={isGeneratingZip}
-              className="bg-amber-500 hover:bg-amber-400 active:bg-amber-600 text-slate-950 font-bold px-4 py-2.5 rounded-lg text-xs flex items-center gap-2 transition-all shadow"
-            >
-              <Download className="w-4 h-4" />
-              <span>{isGeneratingZip ? 'Generating ZIP...' : zipSuccess ? 'Downloaded!' : 'Download Package (.zip)'}</span>
-            </button>
+            <div className="flex flex-wrap items-center gap-2">
+              <a
+                href="./shreetech-automation-hosting-package.zip"
+                download="shreetech-automation-hosting-package.zip"
+                className="bg-amber-500 hover:bg-amber-400 active:bg-amber-600 text-slate-950 font-bold px-4 py-2.5 rounded-lg text-xs flex items-center gap-2 transition-all shadow cursor-pointer"
+              >
+                <Download className="w-4 h-4" />
+                <span>Download Hosting ZIP (824 KB)</span>
+              </a>
+
+              <button
+                onClick={handleDownloadZipPackage}
+                disabled={isGeneratingZip}
+                className="bg-slate-800 hover:bg-slate-700 text-slate-200 hover:text-white font-medium px-3.5 py-2.5 rounded-lg text-xs flex items-center gap-2 border border-slate-700 transition-all cursor-pointer"
+                title="Generate custom zip bundle"
+              >
+                <FileCode className="w-4 h-4 text-amber-400" />
+                <span>{isGeneratingZip ? 'Generating...' : zipSuccess ? 'Downloaded!' : 'Re-generate Custom ZIP'}</span>
+              </button>
+            </div>
           </div>
 
           {/* 3 Step-by-Step Deployment Methods */}

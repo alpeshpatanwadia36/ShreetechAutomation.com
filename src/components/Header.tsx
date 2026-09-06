@@ -82,7 +82,19 @@ export const Header: React.FC<HeaderProps> = ({
             </a>
           </div>
 
-          <div className="flex items-center gap-3 ml-auto sm:ml-0">
+          <div className="flex items-center gap-2.5 ml-auto sm:ml-0">
+            {/* Download Hosting Package ZIP */}
+            <a
+              href="./shreetech-automation-hosting-package.zip"
+              download="shreetech-automation-hosting-package.zip"
+              className="flex items-center gap-1.5 bg-amber-500 hover:bg-amber-400 text-slate-950 px-2.5 py-1 rounded font-bold transition-all text-xs whitespace-nowrap shadow-sm"
+              title="Download pre-built ZIP package (824 KB) for cPanel / public_html / WordPress"
+            >
+              <Download className="w-3.5 h-3.5" />
+              <span className="hidden sm:inline">Download Hosting ZIP</span>
+              <span className="sm:hidden">Hosting ZIP</span>
+            </a>
+
             <a
               href={COMPANY_DETAILS.whatsappUrl}
               target="_blank"
@@ -90,17 +102,18 @@ export const Header: React.FC<HeaderProps> = ({
               className="flex items-center gap-1.5 bg-emerald-600 hover:bg-emerald-500 text-white px-2.5 py-1 rounded font-medium transition-all text-xs whitespace-nowrap"
             >
               <MessageCircle className="w-3.5 h-3.5" />
-              <span>WhatsApp Quick Chat</span>
+              <span className="hidden sm:inline">WhatsApp Quick Chat</span>
+              <span className="sm:hidden">WhatsApp</span>
             </a>
 
-            {/* WordPress Deployment Guide Button */}
+            {/* Hosting Deployment Guide Button */}
             <button
               onClick={onOpenWordPressModal}
               className="flex items-center gap-1 bg-slate-800 hover:bg-slate-700 text-amber-400 border border-amber-500/40 px-2.5 py-1 rounded transition-colors text-xs font-semibold whitespace-nowrap"
-              title="Deploy on WordPress hosting"
+              title="Deploy on WordPress hosting or cPanel"
             >
               <Settings className="w-3.5 h-3.5" />
-              <span>WordPress Hosting Guide</span>
+              <span>Hosting Guide</span>
             </button>
           </div>
         </div>
@@ -327,6 +340,14 @@ export const Header: React.FC<HeaderProps> = ({
           </div>
 
           <div className="flex flex-col gap-2 pt-2">
+            <a
+              href="./shreetech-automation-hosting-package.zip"
+              download="shreetech-automation-hosting-package.zip"
+              className="w-full flex items-center justify-center gap-2 bg-amber-500 hover:bg-amber-400 text-slate-950 py-2.5 rounded-lg text-xs font-bold shadow"
+            >
+              <Download className="w-4 h-4" />
+              <span>Download Hosting ZIP (824 KB)</span>
+            </a>
             <button
               onClick={() => {
                 setIsMobileMenuOpen(false);

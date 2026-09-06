@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { 
   ArrowRight, 
   ShieldCheck, 
@@ -10,7 +10,8 @@ import {
   DoorClosed,
   Wind,
   Layers,
-  Award
+  Award,
+  Sparkles
 } from 'lucide-react';
 import { COMPANY_DETAILS } from '../data/companyData';
 
@@ -20,11 +21,60 @@ interface HeroProps {
   onOpenWordPressModal: () => void;
 }
 
+const SHOWCASE_ITEMS = [
+  {
+    id: 'interlocks',
+    title: 'Microprocessor Door Interlock Systems',
+    label: 'Cleanroom Interlocks',
+    description: '2 to 8 door programmable airlock controllers with emergency life safety override',
+    image: './products/door-interlocking-system.jpg',
+    fallback: './products/door-interlock-controller.jpg',
+    badge: 'Featured Solution',
+    spec: 'cGMP / FDA Compliant',
+    icon: Cpu,
+  },
+  {
+    id: 'doors',
+    title: 'Automatic PVC High Speed Roll Up Doors',
+    label: 'Rapid PVC Doors',
+    description: 'High frequency rapid roll up doors with safety sensors up to 1.5 m/s opening speed',
+    image: './products/automatic-pvc-roll-up-doors.jpg',
+    fallback: './products/pvc-strip-curtain.jpg',
+    badge: 'Entrance Automation',
+    spec: 'Up to 1.5 m/s',
+    icon: DoorClosed,
+  },
+  {
+    id: 'curtains',
+    title: 'Stainless Steel Industrial Air Curtains',
+    label: 'SS Air Curtains',
+    description: 'High velocity climate barrier up to 22 m/s preventing thermal loss & insect entry',
+    image: './products/air-curtain.jpg',
+    fallback: './products/air-curtain-sensor.jpg',
+    badge: 'Clean Environment',
+    spec: '22 m/s Velocity',
+    icon: Wind,
+  },
+  {
+    id: 'gates',
+    title: 'Heavy Duty Tripod Turnstile Security Gates',
+    label: 'Tripod Gates',
+    description: 'SUS 304 stainless steel access barriers with anti-tailgating & biometric integration',
+    image: './products/tripod-turnstile.jpg',
+    fallback: './products/flap-barrier-gate.jpg',
+    badge: 'Access & Security',
+    spec: 'SUS 304 Steel',
+    icon: ShieldCheck,
+  },
+];
+
 export const Hero: React.FC<HeroProps> = ({
   onExploreCatalog,
   onRequestQuote,
   onOpenWordPressModal,
 }) => {
+  const [activeShowcaseIdx, setActiveShowcaseIdx] = useState<number>(0);
+  const activeItem = SHOWCASE_ITEMS[activeShowcaseIdx];
   return (
     <div id="hero" className="relative bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-white overflow-hidden border-b border-slate-800">
       {/* Subtle Grid Accent Pattern */}
@@ -157,37 +207,96 @@ export const Hero: React.FC<HeroProps> = ({
                 </div>
 
                 {/* Main Product Showcase Card */}
-                <div className="relative rounded-xl overflow-hidden border border-slate-700/60 aspect-video group">
+                <div className="relative rounded-xl overflow-hidden border border-slate-700/60 aspect-video group bg-slate-950 shadow-inner">
                   <img
-                    src="https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=800&q=80"
-                    alt="Shree Tech Automation Cleanroom Interlock and Automation"
+                    key={activeItem.image}
+                    src={activeItem.image}
+                    alt={activeItem.title}
+                    referrerPolicy="no-referrer"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    onError={(e) => {
+                      const target = e.currentTarget;
+                      if (activeItem.fallback && target.src !== activeItem.fallback) {
+                        target.src = activeItem.fallback;
+                      }
+                    }}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent flex flex-col justify-end p-4">
-                    <span className="text-[10px] font-mono uppercase tracking-widest text-amber-400 font-bold">Featured Solution</span>
-                    <h3 className="text-white font-bold text-base leading-tight">Microprocessor Door Interlock Systems</h3>
-                    <p className="text-slate-300 text-xs mt-0.5">2 to 8 door programmable airlock controllers with emergency life safety override</p>
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent flex flex-col justify-end p-4">
+                    <div className="flex items-center justify-between gap-2 mb-1">
+                      <span className="text-[10px] font-mono uppercase tracking-widest text-amber-400 font-bold bg-amber-500/20 px-2 py-0.5 rounded border border-amber-500/30">
+                        {activeItem.badge}
+                      </span>
+                      <span className="text-[10px] font-mono text-slate-300 bg-slate-900/80 px-2 py-0.5 rounded border border-slate-700/50">
+                        {activeItem.spec}
+                      </span>
+                    </div>
+                    <h3 className="text-white font-bold text-base leading-tight drop-shadow">
+                      {activeItem.title}
+                    </h3>
+                    <p className="text-slate-300 text-xs mt-0.5 line-clamp-2">
+                      {activeItem.description}
+                    </p>
                   </div>
                 </div>
 
-                {/* Quick 3-card Mini Bento */}
+                {/* Quick Interactive Mini Bento Selector */}
                 <div className="grid grid-cols-3 gap-2 text-center">
-                  <div className="bg-slate-950/70 border border-slate-800 p-2.5 rounded-lg hover:border-amber-500/40 transition-colors">
-                    <DoorClosed className="w-5 h-5 text-amber-400 mx-auto mb-1" />
-                    <div className="text-[11px] font-bold text-white leading-tight">Rapid PVC Doors</div>
+                  <button
+                    type="button"
+                    onClick={() => setActiveShowcaseIdx(1)}
+                    className={`p-2.5 rounded-lg border text-center transition-all cursor-pointer ${
+                      activeShowcaseIdx === 1
+                        ? 'bg-amber-500/20 border-amber-500 text-amber-300 shadow-md ring-1 ring-amber-500/50'
+                        : 'bg-slate-950/70 border-slate-800 text-slate-300 hover:border-amber-500/40 hover:bg-slate-900'
+                    }`}
+                  >
+                    <DoorClosed className={`w-5 h-5 mx-auto mb-1 ${activeShowcaseIdx === 1 ? 'text-amber-400' : 'text-slate-400'}`} />
+                    <div className="text-[11px] font-bold leading-tight">Rapid PVC Doors</div>
                     <div className="text-[10px] text-slate-400 mt-0.5">Up to 1.5 m/s</div>
-                  </div>
-                  <div className="bg-slate-950/70 border border-slate-800 p-2.5 rounded-lg hover:border-amber-500/40 transition-colors">
-                    <Wind className="w-5 h-5 text-amber-400 mx-auto mb-1" />
-                    <div className="text-[11px] font-bold text-white leading-tight">SS Air Curtains</div>
+                  </button>
+
+                  <button
+                    type="button"
+                    onClick={() => setActiveShowcaseIdx(2)}
+                    className={`p-2.5 rounded-lg border text-center transition-all cursor-pointer ${
+                      activeShowcaseIdx === 2
+                        ? 'bg-amber-500/20 border-amber-500 text-amber-300 shadow-md ring-1 ring-amber-500/50'
+                        : 'bg-slate-950/70 border-slate-800 text-slate-300 hover:border-amber-500/40 hover:bg-slate-900'
+                    }`}
+                  >
+                    <Wind className={`w-5 h-5 mx-auto mb-1 ${activeShowcaseIdx === 2 ? 'text-amber-400' : 'text-slate-400'}`} />
+                    <div className="text-[11px] font-bold leading-tight">SS Air Curtains</div>
                     <div className="text-[10px] text-slate-400 mt-0.5">22 m/s Velocity</div>
-                  </div>
-                  <div className="bg-slate-950/70 border border-slate-800 p-2.5 rounded-lg hover:border-amber-500/40 transition-colors">
-                    <ShieldCheck className="w-5 h-5 text-amber-400 mx-auto mb-1" />
-                    <div className="text-[11px] font-bold text-white leading-tight">Tripod Gates</div>
+                  </button>
+
+                  <button
+                    type="button"
+                    onClick={() => setActiveShowcaseIdx(3)}
+                    className={`p-2.5 rounded-lg border text-center transition-all cursor-pointer ${
+                      activeShowcaseIdx === 3
+                        ? 'bg-amber-500/20 border-amber-500 text-amber-300 shadow-md ring-1 ring-amber-500/50'
+                        : 'bg-slate-950/70 border-slate-800 text-slate-300 hover:border-amber-500/40 hover:bg-slate-900'
+                    }`}
+                  >
+                    <ShieldCheck className={`w-5 h-5 mx-auto mb-1 ${activeShowcaseIdx === 3 ? 'text-amber-400' : 'text-slate-400'}`} />
+                    <div className="text-[11px] font-bold leading-tight">Tripod Gates</div>
                     <div className="text-[10px] text-slate-400 mt-0.5">SUS 304 Steel</div>
-                  </div>
+                  </button>
                 </div>
+
+                {/* Reset to Flagship Solution button when another item is selected */}
+                {activeShowcaseIdx !== 0 && (
+                  <div className="text-center pt-0.5">
+                    <button
+                      type="button"
+                      onClick={() => setActiveShowcaseIdx(0)}
+                      className="text-[11px] font-mono text-amber-400/90 hover:text-amber-300 flex items-center justify-center gap-1.5 mx-auto py-1 px-3 rounded-full bg-amber-500/10 border border-amber-500/20 transition-colors"
+                    >
+                      <Sparkles className="w-3 h-3 text-amber-400" />
+                      <span>Back to Flagship: Door Interlock System</span>
+                    </button>
+                  </div>
+                )}
 
                 {/* Direct Contact Action Box */}
                 <div className="bg-gradient-to-r from-amber-500/10 to-orange-500/10 border border-amber-500/30 rounded-xl p-3 flex items-center justify-between">

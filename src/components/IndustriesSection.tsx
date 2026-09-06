@@ -149,11 +149,18 @@ export const IndustriesSection: React.FC<IndustriesSectionProps> = ({
 
           {/* Right: Realistic Sector Image */}
           <div className="lg:col-span-5">
-            <div className="relative rounded-2xl overflow-hidden aspect-4/3 sm:aspect-16/10 border border-slate-200 shadow-md group">
+            <div className="relative rounded-2xl overflow-hidden aspect-4/3 sm:aspect-16/10 border border-slate-200 shadow-md group bg-slate-900">
               <img
                 src={currentIndustry.imageUrl}
                 alt={currentIndustry.title}
+                referrerPolicy="no-referrer"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                onError={(e) => {
+                  const target = e.currentTarget;
+                  if (target.src !== './products/door-interlocking-system.jpg') {
+                    target.src = './products/door-interlocking-system.jpg';
+                  }
+                }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent flex items-end p-4">
                 <div className="text-white text-xs font-medium">

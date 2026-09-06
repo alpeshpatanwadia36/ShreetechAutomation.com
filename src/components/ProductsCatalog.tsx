@@ -147,6 +147,7 @@ export const ProductsCatalog: React.FC<ProductsCatalogProps> = ({
                   <img
                     src={product.imageUrl}
                     alt={product.name}
+                    referrerPolicy="no-referrer"
                     onError={(e) => {
                       if (product.onlineImageUrl && e.currentTarget.src !== product.onlineImageUrl) {
                         e.currentTarget.src = product.onlineImageUrl;

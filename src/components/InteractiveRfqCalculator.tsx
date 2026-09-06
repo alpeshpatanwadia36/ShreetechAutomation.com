@@ -17,6 +17,7 @@ import {
 import { PRODUCTS_DATA } from '../data/productsData';
 import { COMPANY_DETAILS } from '../data/companyData';
 import { ProductItem } from '../types';
+import { QuotationDemoModal } from './QuotationDemoModal';
 
 interface InteractiveRfqCalculatorProps {
   preSelectedProduct: ProductItem | null;
@@ -44,6 +45,7 @@ export const InteractiveRfqCalculator: React.FC<InteractiveRfqCalculatorProps> =
   const [isCopied, setIsCopied] = useState<boolean>(false);
   const [submittedSuccess, setSubmittedSuccess] = useState<boolean>(false);
   const [ticketNumber, setTicketNumber] = useState<string>('');
+  const [showQuotationModal, setShowQuotationModal] = useState<boolean>(false);
 
   // Update when preSelectedProduct changes
   useEffect(() => {
@@ -89,7 +91,8 @@ _Generated via Shree Tech Automation Portal (shreetechautomation.com / .in)_`;
   const handleSendEmail = () => {
     const subject = encodeURIComponent(`Quotation Request: ${currentProduct.name} [${companyName || fullName || 'Inquiry'}]`);
     const body = encodeURIComponent(rfqSummary);
-    window.location.href = `mailto:${COMPANY_DETAILS.salesEmail}?cc=${COMPANY_DETAILS.primaryEmail}&subject=${subject}&body=${body}`;
+    const ccList = email ? `${COMPANY_DETAILS.primaryEmail},${email}` : COMPANY_DETAILS.primaryEmail;
+    window.location.href = `mailto:${COMPANY_DETAILS.salesEmail}?cc=${ccList}&subject=${subject}&body=${body}`;
   };
 
   const handleSubmitForm = (e: React.FormEvent) => {
@@ -380,8 +383,17 @@ _Generated via Shree Tech Automation Portal (shreetechautomation.com / .in)_`;
               <div className="space-y-2 pt-2">
                 <button
                   type="button"
+                  onClick={() => setShowQuotationModal(true)}
+                  className="w-full bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-bold py-2.5 px-4 rounded-xl text-xs flex items-center justify-center gap-2 transition-all shadow-md cursor-pointer"
+                >
+                  <FileText className="w-4 h-4" />
+                  <span>Preview Official Quotation (Demo & Print)</span>
+                </button>
+
+                <button
+                  type="button"
                   onClick={handleSendWhatsApp}
-                  className="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-2.5 px-4 rounded-xl text-xs flex items-center justify-center gap-2 transition-colors shadow"
+                  className="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-2.5 px-4 rounded-xl text-xs flex items-center justify-center gap-2 transition-colors shadow cursor-pointer"
                 >
                   <MessageCircle className="w-4 h-4" />
                   <span>Send via WhatsApp (+91 80 4580 1731)</span>
@@ -390,7 +402,7 @@ _Generated via Shree Tech Automation Portal (shreetechautomation.com / .in)_`;
                 <button
                   type="button"
                   onClick={handleSendEmail}
-                  className="w-full bg-slate-800 hover:bg-slate-700 text-slate-200 hover:text-white font-semibold py-2.5 px-4 rounded-xl text-xs flex items-center justify-center gap-2 border border-slate-700 transition-colors"
+                  className="w-full bg-slate-800 hover:bg-slate-700 text-slate-200 hover:text-white font-semibold py-2.5 px-4 rounded-xl text-xs flex items-center justify-center gap-2 border border-slate-700 transition-colors cursor-pointer"
                 >
                   <Mail className="w-4 h-4 text-amber-400" />
                   <span>Send via Official Email</span>
@@ -429,6 +441,22 @@ _Generated via Shree Tech Automation Portal (shreetechautomation.com / .in)_`;
         </div>
 
       </div>
+
+      {/* Official Quotation Demo Modal */}
+      <QuotationDemoModal
+        isOpen={showQuotationModal}
+        onClose={() => setShowQuotationModal(false)}
+        product={currentProduct}
+        quantity={quantity}
+        materialOption={materialOption}
+        dimensions={dimensions}
+        clientName={fullName || 'Demo Recipient'}
+        clientCompany={companyName || 'Engineering & Purchase Department'}
+        clientPhone={phone || '+91 80 4580 1731'}
+        clientEmail={email || 'vasad36@gmail.com'}
+        clientCity={city || 'Vadodara, Gujarat'}
+        notes={notes || 'Standard manufacturing and testing compliance'}
+      />
     </section>
   );
 };

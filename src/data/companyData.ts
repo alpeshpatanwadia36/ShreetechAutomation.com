@@ -60,7 +60,7 @@ export const INDUSTRIES_SERVED: IndustrySolution[] = [
       'Audit-ready electronic interlocking logs',
       'Hermetic sealing against particulate matter',
     ],
-    imageUrl: 'https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=800&q=80',
+    imageUrl: './products/door-interlocking-system.jpg',
   },
   {
     title: 'Food, Dairy & Beverage Processing',
@@ -77,7 +77,7 @@ export const INDUSTRIES_SERVED: IndustrySolution[] = [
       'Insect-free raw material and packaging airlocks',
       'Temperature loss reduction up to 45%',
     ],
-    imageUrl: 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=800&q=80',
+    imageUrl: './products/automatic-pvc-roll-up-doors.jpg',
   },
   {
     title: 'Cold Storage & Warehousing',
@@ -94,7 +94,7 @@ export const INDUSTRIES_SERVED: IndustrySolution[] = [
       'Prevents ice condensation on door frames',
       'Forklift-safe impact-resistant flexible curtains',
     ],
-    imageUrl: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80',
+    imageUrl: './products/pvc-strip-curtain.jpg',
   },
   {
     title: 'Chemical & Hazardous Plants',
@@ -111,7 +111,7 @@ export const INDUSTRIES_SERVED: IndustrySolution[] = [
       'Corrosion resistant alloy LM6 and SS316 finishes',
       'Fail-safe spring return emergency shutoff',
     ],
-    imageUrl: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80',
+    imageUrl: './products/door-interlock-controller.jpg',
   },
   {
     title: 'Corporate HQs & Tech Parks',
@@ -128,7 +128,7 @@ export const INDUSTRIES_SERVED: IndustrySolution[] = [
       'Anti-tailgating optical beam verification',
       'Seamless integration with HR payroll & visitor management',
     ],
-    imageUrl: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80',
+    imageUrl: './products/flap-barrier-gate.jpg',
   },
   {
     title: 'Textile, Paper & Heavy Engineering',
@@ -145,7 +145,7 @@ export const INDUSTRIES_SERVED: IndustrySolution[] = [
       'Heavy industrial continuous duty endurance',
       'Reduced downtime with rapid self-repairing tracks',
     ],
-    imageUrl: 'https://images.unsplash.com/photo-1581092162384-8987c1d64718?auto=format&fit=crop&w=800&q=80',
+    imageUrl: './products/automatic-sliding-gate-motor.jpg',
   },
 ];
 
